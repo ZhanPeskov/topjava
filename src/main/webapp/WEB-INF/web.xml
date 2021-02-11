@@ -24,6 +24,8 @@
     <servlet-mapping>
         <servlet-name>mealServlet</servlet-name>
         <url-pattern>/meals</url-pattern>
+        <url-pattern>/Update</url-pattern>
+        <url-pattern>/Delete</url-pattern>
     </servlet-mapping>
 
 </web-app>
