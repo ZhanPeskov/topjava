@@ -1,6 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <html lang="ru">
 <head>
     <title>Meals</title>
@@ -34,9 +35,9 @@
             <td width="80px" align="right">${meal.calories}</td>
             <c:forTokens items="Update;Delete" delims=";" var="action">
                 <td width="80px" align="center">
-                    <form method="post" action="${pageContext.request.contextPath}/${action}?id=${meal.id}">
+                    <a href="meals?action=${fn:toLowerCase(action)}&id=${meal.id}">
                         <input type="submit" style="${rowColor}" value="${action}"/>
-                    </form>
+                    </a>
                 </td>
             </c:forTokens>
         </tr>
